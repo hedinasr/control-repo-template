@@ -13,5 +13,8 @@ class profile::base {
   create_resources('ssh_authorized_key', hiera_hash('ssh_authorized_keys', {}))
 
   $enhancers = [ 'tmux', 'htop', 'mlocate', 'lsb-release' ] # todo -> run updatedb after install mlocate
-  package { $enhancers: ensure => 'installed' }
+  package { $enhancers:
+    ensure  => 'installed',
+    require => Exec['apt_update'],
+  }
 }
