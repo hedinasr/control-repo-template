@@ -1,0 +1,9 @@
+---
+user:
+  exploit:
+    ensure: present
+    managehome: true
+
+group:
+  dsi:
+    gid: 500

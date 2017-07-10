@@ -1,0 +1,38 @@
+FROM ubuntu:16.04
+MAINTAINER Hedi Nasr "h.nsr69@gmail.com"
+
+ENV UBUNTU_CODENAME="xenial" PUPPETSERVER_JAVA_ARGS="-Xms256m -Xmx256m"
+ENV PATH=/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
+
+RUN apt-get update && \
+    apt-get install -y ca-certificates wget git locales && \
+    wget https://apt.puppetlabs.com/puppetlabs-release-pc1-"$UBUNTU_CODENAME".deb && \
+    dpkg -i puppetlabs-release-pc1-"$UBUNTU_CODENAME".deb && \
+    apt-get update && \
+    rm puppetlabs-release-pc1-"$UBUNTU_CODENAME".deb && \
+    apt-get install --no-install-recommends -y puppetserver && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    gem install --no-rdoc --no-ri r10k
+
+# Set the locale
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+COPY puppetserver /etc/default/puppetserver
+
+RUN puppet config set autosign true --section master
+
+VOLUME /etc/puppetlabs/code/ \
+       /etc/puppetlabs/puppet/ssl/ \
+       /opt/puppetlabs/server/data/puppetserver/ \
+       /etc/puppetlabs/r10k/
+
+COPY ./docker-entrypoint.sh /
+
+EXPOSE 8140
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["foreground"]

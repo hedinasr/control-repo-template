@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  puppet:
+    build: .
+    restart: always
+    container_name: puppetmaster
+    hostname: puppetmaster
+    ports:
+      - 8140
+    volumes:
+      - ../:/etc/puppetlabs/code/environments/dev

@@ -1,0 +1,10 @@
+---
+ntp::servers:
+  - ntp.ens-lyon.fr
+  - lxc-dnsinterne1.ens-lyon.fr
+  - domu-dnsinterne2.ens-lyon.fr
+
+user:
+  hnasr:
+    ensure: present
+    managehome: true
