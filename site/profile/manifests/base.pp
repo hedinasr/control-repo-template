@@ -5,7 +5,7 @@ class profile::base {
   include apt
 
   class { 'motd':
-    content => "This is host ${::fqdn}."
+    content => "This is host ${::fqdn}.",
   }
 
   create_resources('user', hiera_hash('user', {}))

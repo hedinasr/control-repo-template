@@ -1,0 +1,24 @@
+{
+    "name": "my-profile",
+    "version": "0.0.1",
+    "author": "Hedi Nasr",
+    "summary": "Profile module.",
+    "license": "MIT",
+    "source": "https://github.com/Ananasr/control-repo-template",
+    "project_page": "https://github.com/Ananasr/control-repo-template",
+    "issues_url": "https://github.com/Ananasr/control-repo-template/issues",
+    "dependencies": [
+        {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    ],
+    "operatingsystem_support": [
+        {
+            "operatingsystem": "Debian",
+            "operatingsystemrelease": [
+                "8",
+                "7"
+            ]
+        }
+    ],
+    "data_provider": null
+}
+

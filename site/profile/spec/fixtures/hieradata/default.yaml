@@ -1,0 +1,13 @@
+---
+ntp::servers:
+  - ntp.ens-lyon.fr
+  - lxc-dnsinterne1.ens-lyon.fr
+  - domu-dnsinterne2.ens-lyon.fr
+
+ntp::restrict:
+  - '127.0.0.1'
+
+user:
+  hnasr:
+    ensure: present
+    managehome: true
