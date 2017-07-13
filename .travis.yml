@@ -3,6 +3,7 @@ sudo: false
 cache: bundler
 language: ruby
 bundler_args: --without system_tests
+before_install: rm Gemfile.lock || true
 script: "cd site/profile && bundle exec rake test"
 rvm:
   - 2.4.0
