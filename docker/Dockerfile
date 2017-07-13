@@ -5,7 +5,7 @@ ENV UBUNTU_CODENAME="xenial" PUPPETSERVER_JAVA_ARGS="-Xms256m -Xmx256m"
 ENV PATH=/opt/puppetlabs/server/bin:/opt/puppetlabs/puppet/bin:/opt/puppetlabs/bin:$PATH
 
 RUN apt-get update && \
-    apt-get install -y ca-certificates wget git locales && \
+    apt-get install -y ca-certificates wget git locales lsb-release && \
     wget https://apt.puppetlabs.com/puppetlabs-release-pc1-"$UBUNTU_CODENAME".deb && \
     dpkg -i puppetlabs-release-pc1-"$UBUNTU_CODENAME".deb && \
     apt-get update && \
