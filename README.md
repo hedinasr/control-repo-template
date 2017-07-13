@@ -1,0 +1,1 @@
+# Puppet control repo inspire from [[https://github.com/example42/psick][example42/psick]] and [[https://github.com/puppetlabs/control-repo][puppetlabs/control-repo]]. [![Build Status](https://travis-ci.org/Ananasr/control-repo-template.svg?branch=master)](https://travis-ci.org/Ananasr/control-repo-template)
