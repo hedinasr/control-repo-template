@@ -1,0 +1,8 @@
+fixtures:
+  forge_modules:
+    apt: "puppetlabs/apt"
+    motd: "puppetlabs/motd"
+    ntp: "puppetlabs/ntp"
+    stdlib: "puppetlabs/stdlib"
+  symlinks:
+    "profile": "#{source_dir}/site/profile"

@@ -3,7 +3,7 @@ sudo: false
 cache: bundler
 language: ruby
 bundler_args: --without system_tests
-script: "cd site/profile && bundle exec rake test"
+script: "bundle exec rake test"
 matrix:
     fast_finish: true
     include:

@@ -1,8 +1,0 @@
-fixtures:
-  repositories:
-    "apt": "https://github.com/puppetlabs/puppetlabs-apt.git"
-    "motd": "https://github.com/puppetlabs/puppetlabs-motd.git"
-    "ntp": "https://github.com/puppetlabs/puppetlabs-ntp.git"
-    "stdlib": "https://github.com/puppetlabs/puppetlabs-stdlib.git"
-  symlinks:
-    "profile": "#{source_dir}"
