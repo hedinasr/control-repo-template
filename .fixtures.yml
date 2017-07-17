@@ -4,5 +4,13 @@ fixtures:
     motd: "puppetlabs/motd"
     ntp: "puppetlabs/ntp"
     stdlib: "puppetlabs/stdlib"
+    ruby: "puppetlabs/ruby"
+    gcc: "puppetlabs/gcc"
+    inifile: "puppetlabs/inifile"
+    vcsrepo: "puppetlabs/vcsrepo"
+    git: "puppetlabs/git"
+    make: "puppet/make"
+    r10k: "puppet/r10k"
+
   symlinks:
     "profile": "#{source_dir}/site/profile"
