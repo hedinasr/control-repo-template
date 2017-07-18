@@ -1,6 +1,9 @@
 fixtures:
+  repositories:
+    apt:
+      repo: "git://github.com/puppetlabs/puppetlabs-apt"
+      branch: "4.0.0"
   forge_modules:
-    apt: "puppetlabs/apt"
     motd: "puppetlabs/motd"
     ntp: "puppetlabs/ntp"
     stdlib: "puppetlabs/stdlib"
@@ -11,6 +14,8 @@ fixtures:
     git: "puppetlabs/git"
     make: "puppet/make"
     r10k: "puppet/r10k"
+    gitlab: "vshn-gitlab"
+    docker: "garethr/docker"
 
   symlinks:
     "profile": "#{source_dir}/site/profile"
