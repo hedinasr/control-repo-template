@@ -10,4 +10,5 @@ mod 'puppet-r10k', '6.1.0'
 mod 'puppetlabs-ruby', '1.0.0'
 mod 'puppetlabs-stdlib', '4.17.1'
 mod 'puppetlabs-vcsrepo', '2.0.0'
+mod 'garethr-docker', '5.3.0'
 
