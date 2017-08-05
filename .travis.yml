@@ -10,6 +10,7 @@ matrix:
     - rvm: 2.4.0
       env: PUPPET_GEM_VERSION="~> 4.0"
     - rvm: default
+      bundler_args:
       sudo: required
       services: docker
       env:
