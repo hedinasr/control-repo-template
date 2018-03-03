@@ -18,4 +18,4 @@ fixtures:
     docker: "garethr/docker"
 
   symlinks:
-    "profile": "#{source_dir}/site/profile"
+    profile: "#{source_dir}/site/profile"

@@ -1,14 +1,12 @@
-$role = hiera('role', false)
+$role = lookup('role') |$not_found| {}
 
 node default {
-  if $::role {
-    include "role::${::role}"
-  } else {
-    include profile::base
-    notify { "Node ${::fqdn} has no role set." :}
-  }
-}
 
-node 'puppetmaster' {
-  include role::puppetmaster
+  if $role {
+    notice("Node ${::fqdn} has role ${role}.")
+    include "role::${role}"
+  } else {
+    warning("Node ${::fqdn} has no role set.")
+    include profile::base
+  }
 }

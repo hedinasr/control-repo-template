@@ -2,3 +2,5 @@ modules/
 vendor/
 .bundle
 Gemfile.lock
+.vagrant/
+log/

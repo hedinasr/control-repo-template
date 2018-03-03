@@ -12,14 +12,10 @@ RSpec.configure do |c|
     hosts.each do |host|
       copy_module_to(host, :source => proj_root + '/site/profile', :module_name => 'profile')
 
-      on host, puppet('module', 'install', 'puppetlabs-stdlib'),
-         {:acceptable_exit_codes => [0]}
-      on host, puppet('module', 'install', 'puppetlabs-apt'),
-         {:acceptable_exit_codes => [0]}
-      on host, puppet('module', 'install', 'puppetlabs-ntp'),
-         {:acceptable_exit_codes => [0]}
-      on host, puppet('module', 'install', 'puppetlabs-motd'),
-         {:acceptable_exit_codes => [0]}
+      ['puppetlabs-stdlib', 'puppetlabs-apt', 'puppetlabs-ntp', 'puppetlabs-motd'].each do |mod|
+        on host, puppet('module', 'install', mod),
+           {:acceptable_exit_codes => [0]}
+      end
     end
   end
 end
