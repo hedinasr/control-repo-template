@@ -1,4 +1,4 @@
-control-repo
+control-repo [![Build Status](https://travis-ci.org/Ananasr/control-repo-template.svg?branch=production)](https://travis-ci.org/Ananasr/control-repo-template)
 ===============
 
 # Setup
